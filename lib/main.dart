@@ -1,6 +1,7 @@
-import 'package:do_shop/models/product.dart';
 import 'package:flutter/material.dart';
 
+import './models/product.dart';
+import './screens/product_detail_screen.dart';
 import './screens/products_overview_screen.dart';
 
 void main() => runApp(MyApp());
@@ -11,9 +12,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'MyShop',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+          primarySwatch: Colors.teal,
+          accentColor: Colors.yellowAccent,
+          fontFamily: 'Lato'),
       home: ProductsOverviewScreen(),
+      routes: {
+        ProductDetailScreen.routeName: (ctx) => ProductDetailScreen(),
+      },
     );
   }
 }
