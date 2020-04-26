@@ -18,7 +18,7 @@ class Cart with ChangeNotifier {
   Map<String, CartItem> _items = {};
 
   Map<String, CartItem> get items {
-    return {...items};
+    return {..._items};
   }
 
   int get itemCount {
@@ -58,6 +58,11 @@ class Cart with ChangeNotifier {
             quantity: 1),
       );
     }
+    notifyListeners();
+  }
+
+  void removeItem(String productId) {
+    _items.remove(productId);
     notifyListeners();
   }
 }
